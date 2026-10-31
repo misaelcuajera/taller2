@@ -1,0 +1,30 @@
+@model IEnumerable<Persona>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">No hay personas en la base de datos.</div>
+}
+else
+{
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Persona item in Model)
+            {
+                <tr>
+                    <td>@item.id_persona</td>
+                    <td>@item.nombre</td>
+                    <td>@item.apellido</td>
+                    <td>@item.edad</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
